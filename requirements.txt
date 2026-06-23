@@ -1,4 +1,4 @@
-meridian-mmm
+google-meridian
 pandas
 numpy
 matplotlib
