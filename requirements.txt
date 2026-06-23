@@ -1,0 +1,6 @@
+meridian-mmm
+pandas
+numpy
+matplotlib
+seaborn
+jupyter
