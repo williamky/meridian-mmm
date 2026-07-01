@@ -36,10 +36,12 @@ Reusable signal transforms used in both synthetic data generation and model inte
 ### Data conventions
 
 - All monetary values are in **£000s** (thousands of pounds).
-- Canonical channel names: `tv`, `search`, `social`, `display`
-- Canonical spend column names: `tv_spend`, `search_spend`, `social_spend`, `display_spend`
-- Canonical channel colours (in order): `['#e74c3c', '#3498db', '#2ecc71', '#f39c12']`
+- 9 canonical channels (in order): `tv`, `search`, `social`, `display`, `video`, `ooh`, `radio`, `email`, `affiliate`
+- Spend columns follow the pattern `<channel>_spend` (e.g. `tv_spend`, `affiliate_spend`)
+- Canonical channel colours (in order): `['#e74c3c', '#3498db', '#2ecc71', '#f39c12', '#9b59b6', '#1abc9c', '#e67e22', '#e91e63', '#607d8b']`
 - Channel parameters follow the `CHANNEL_PARAMS` dict pattern: `dict(coef, decay, ec, slope)`
+- TV and OOH are **flighted** (not always-on) — their spend arrays contain zeros in dark weeks
+- Baseline revenue includes a **trend** component (`1 + 0.003t`) and **holiday uplifts** (Christmas +30%, Easter +12%) on top of the sine-wave seasonality
 
 ### Meridian API (notebook 02)
 
